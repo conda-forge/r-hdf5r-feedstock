@@ -1,0 +1,12 @@
+--- hdf5r.orig/src/Makevars.win	2017-10-23 17:39:30.000000000 -0200
++++ hdf5r/src/Makevars.win	2018-01-31 13:01:40.699818523 -0200
+@@ -1,6 +1,6 @@
+-PKG_LIBS = -L${LIB_HDF5}/lib${R_ARCH} -lhdf5 -lhdf5_hl -lz -lm 
+-PKG_CPPFLAGS=
+-PKG_CFLAGS=-I${LIB_HDF5}/include/hdf5 -I${LIB_HDF5}/include/hdf5_hl -I${LIB_HDF5}/include/cmakeconf -I1_8_14 -I. -D_DEFINE_H5FREE_MEMORY_=0 -D__USE_MINGW_ANSI_STDIO
++PKG_LIBS = -L$(LIBRARY_LIB) -lhdf5 -lhdf5_hl -lz -lm 
++PKG_CPPFLAGS=-I$(LIBRARY_INC)
++PKG_CFLAGS=-I$(LIBRARY_INC) -I1_8_14 -I. -D_DEFINE_H5FREE_MEMORY_=0 -D__USE_MINGW_ANSI_STDIO
+ 
+ .PHONY: all copy_auto_files
+ 
