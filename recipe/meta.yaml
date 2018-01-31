@@ -13,11 +13,12 @@ source:
     - https://cran.r-project.org/src/contrib/hdf5r_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/hdf5r/hdf5r_{{ version }}.tar.gz
   sha256: 6a5fb0c4ac7129405e993ce461db908d51bc0ea2b717e8ca306c26902423d7e8
+  patches:
+    - fix_libs.patch
 
 build:
   number: 0
-  script: R CMD INSTALL --build .
-  skip: True  # [win]
+  skip: True  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
