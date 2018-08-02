@@ -15,7 +15,8 @@ source:
   sha256: 32f35dc26809a7e9b9335e0dc24369cf87f4c6deb430b2d9d019450a10164240
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   script: R CMD INSTALL --build .
   skip: True  # [win]
   rpaths:
@@ -24,19 +25,19 @@ build:
 
 requirements:
   build:
-    - hdf5 1.10.1
-    - r-base
-    - r-r6
-    - r-bit64
     - posix  # [win]
-    - {{native}}toolchain  # [win]
-    - gcc  # [not win]
-  run:
-    - hdf5 1.10.1
+    - {{ compiler('c') }}        # [unix]
+    - {{ compiler('m2w64_c') }}  # [win]
+  host:
+    - hdf5
     - r-base
     - r-r6
     - r-bit64
-    - libgcc  # [not win]
+  run:
+    - hdf5
+    - r-base
+    - r-r6
+    - r-bit64
 
 test:
   commands:
