@@ -1,4 +1,4 @@
-{% set version = '1.0.0' %}
+{% set version = "1.0.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/hdf5r_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/hdf5r/hdf5r_{{ version }}.tar.gz
-  sha256: 6a5fb0c4ac7129405e993ce461db908d51bc0ea2b717e8ca306c26902423d7e8
+  sha256: 32f35dc26809a7e9b9335e0dc24369cf87f4c6deb430b2d9d019450a10164240
 
 build:
   number: 0
