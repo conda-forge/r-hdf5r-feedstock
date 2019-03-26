@@ -1,4 +1,4 @@
-{% set version = "1.0.1" %}
+{% set version = "1.1.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/hdf5r_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/hdf5r/hdf5r_{{ version }}.tar.gz
-  sha256: 32f35dc26809a7e9b9335e0dc24369cf87f4c6deb430b2d9d019450a10164240
+  sha256: 05cc41e7a670046583178d38a499b6920a125a8ca10f5a93f01b67d05ccb04b3
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   script: R CMD INSTALL --build .
   skip: True  # [win]
   rpaths:
