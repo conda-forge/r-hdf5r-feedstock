@@ -1,4 +1,4 @@
-{% set version = "1.3.2" %}
+{% set version = "1.3.3" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/hdf5r_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/hdf5r/hdf5r_{{ version }}.tar.gz
-  sha256: 31493d9dde9705543e5474c937fa5b4b64895ae1dd6ee51d7039dd95a6015730
+  sha256: a0f83cbf21563e81dbd1a1bd8379623ed0c9c4df4e094c75013abfd7a5271545
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   script: R CMD INSTALL --build .
   skip: true  # [win]
   rpaths:
@@ -48,8 +48,7 @@ about:
   home: https://cran.r-project.org/web/packages/hdf5r
   license: Apache 2.0
   license_file: LICENSE
-  summary: HDF5 is a data model, library and file format for storing  and managing large amounts of data. This package provides a nearly feature complete, object
-    oriented  wrapper for the HDF5 API
+  summary: HDF5 is a data model, library and file format for storing  and managing large amounts of data. This package provides a nearly feature complete, object oriented  wrapper for the HDF5 API
 
 extra:
   recipe-maintainers:
