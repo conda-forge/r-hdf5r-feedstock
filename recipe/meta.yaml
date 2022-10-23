@@ -59,9 +59,13 @@ test:
 
 about:
   home: https://cran.r-project.org/web/packages/hdf5r
-  license: Apache 2.0
+  license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
-  summary: HDF5 is a data model, library and file format for storing  and managing large amounts of data. This package provides a nearly feature complete, object oriented  wrapper for the HDF5 API
+  summary: |
+    HDF5 is a data model, library and file format for storing  and managing 
+    large amounts of data. This package provides a nearly feature complete, 
+    object oriented  wrapper for the HDF5 API
 
 extra:
   recipe-maintainers:
