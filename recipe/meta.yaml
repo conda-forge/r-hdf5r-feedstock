@@ -16,9 +16,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 0
-  script: R CMD INSTALL --build .
-  skip: true  # [win]
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,16 +25,31 @@ requirements:
   build:
     - posix  # [win]
     - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}sed               # [win]
+    - {{ posix }}grep              # [win]
+    - {{ posix }}autoconf
+    - {{ posix }}automake          # [not win]
+    - {{ posix }}automake-wrapper  # [win]
+    - {{ posix }}pkg-config
+    - {{ posix }}make
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
+    - {{ native }}gcc-libs         # [win]
+    - {{ native }}gcc         # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - hdf5
     - r-base
     - r-r6
+    - r-bit
     - r-bit64
   run:
     - hdf5
+    - {{ native }}gcc-libs         # [win]
     - r-base
     - r-r6
+    - r-bit
     - r-bit64
 
 test:
@@ -46,10 +59,15 @@ test:
 
 about:
   home: https://cran.r-project.org/web/packages/hdf5r
-  license: Apache 2.0
+  license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
-  summary: HDF5 is a data model, library and file format for storing  and managing large amounts of data. This package provides a nearly feature complete, object oriented  wrapper for the HDF5 API
+  summary: |
+    HDF5 is a data model, library and file format for storing  and managing 
+    large amounts of data. This package provides a nearly feature complete, 
+    object oriented  wrapper for the HDF5 API
 
 extra:
   recipe-maintainers:
     - ocefpaf
+    - conda-forge/r
