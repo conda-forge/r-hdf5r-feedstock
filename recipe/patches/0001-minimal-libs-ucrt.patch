@@ -1,0 +1,32 @@
+From 458e77a8aa31ba8c14c1643ce7dbfc63d4f0265e Mon Sep 17 00:00:00 2001
+From: Mervin Fansler <mervin.fansler@bric.ku.dk>
+Date: Tue, 3 Sep 2024 16:46:15 +0200
+Subject: [PATCH] minimal libs ucrt
+
+---
+ src/Makevars.ucrt | 10 ++--------
+ 1 file changed, 2 insertions(+), 8 deletions(-)
+
+diff --git a/src/Makevars.ucrt b/src/Makevars.ucrt
+index def377b..02f8fff 100644
+--- a/src/Makevars.ucrt
++++ b/src/Makevars.ucrt
+@@ -1,11 +1,6 @@
+ WRAP = 1_12_0
+-PKG_CPPFLAGS = -I$(WRAP) -I. -DH5_USE_110_API -D__USE_MINGW_ANSI_STDIO
+-
+-ifeq (,$(shell pkg-config --version 2>/dev/null))
+-  PKG_LIBS = -lhdf5_hl -lhdf5 -lz -lm -lsz
+-else
+-  PKG_LIBS = $(shell pkg-config --libs hdf5_hl)
+-endif
++PKG_CPPFLAGS = -I$(LIBRARY_INC) -I$(WRAP) -I. -DH5_USE_110_API -D__USE_MINGW_ANSI_STDIO
++PKG_LIBS = -L$(LIBRARY_LIB) -lhdf5_hl -lhdf5 -lz -lm -lsz
+ 
+ OBJECTS = $(WRAP)/const_export.o $(WRAP)/datatype_export.o $(WRAP)/Wrapper_auto_H5A.o \
+ 	$(WRAP)/Wrapper_auto_H5.o $(WRAP)/Wrapper_auto_H5D.o $(WRAP)/Wrapper_auto_H5DS.o $(WRAP)/Wrapper_auto_H5E.o \
+@@ -17,4 +12,3 @@ OBJECTS = $(WRAP)/const_export.o $(WRAP)/datatype_export.o $(WRAP)/Wrapper_auto_
+ 	convert.o hdf5r_init.o H5Error.o H5ls.o Wrapper_manual_H5T.o
+ 
+ .PHONY: all
+-
