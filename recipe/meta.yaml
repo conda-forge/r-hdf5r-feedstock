@@ -10,6 +10,8 @@ source:
     - {{ cran_mirror }}/src/contrib/hdf5r_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/hdf5r/hdf5r_{{ version }}.tar.gz
   sha256: 92496e0693a27c0a1c8caba671c51fcecc3a120f8ef7eb0cb3cd686a3e49124e
+  patches:
+    - patches/0001-minimal-libs-ucrt.patch
 
 build:
   number: 1
