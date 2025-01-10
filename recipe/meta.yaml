@@ -47,6 +47,7 @@ requirements:
     - r-base
     - r-bit64
     - r-r6
+    - zlib
   run:
     - r-base
     - r-bit64
