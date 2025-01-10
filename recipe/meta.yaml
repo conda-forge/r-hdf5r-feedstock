@@ -14,7 +14,7 @@ source:
     - patches/0001-minimal-libs-ucrt.patch
 
 build:
-  number: 2
+  number: 3
   rpaths:
     - lib/R/lib/
     - lib/
@@ -60,7 +60,6 @@ test:
 about:
   home: https://cran.r-project.org/web/packages/hdf5r
   license: Apache-2.0
-  license_family: Apache
   license_file: LICENSE
   summary: |
     HDF5 is a data model, library and file format for storing  and managing 
