@@ -20,6 +20,18 @@ jobs:
       osx_64_hdf51.14.4r_base4.4:
         CONFIG: osx_64_hdf51.14.4r_base4.4
         UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.3r_base4.3:
+        CONFIG: osx_arm64_hdf51.14.3r_base4.3
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.3r_base4.4:
+        CONFIG: osx_arm64_hdf51.14.3r_base4.4
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.4r_base4.3:
+        CONFIG: osx_arm64_hdf51.14.4r_base4.3
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_hdf51.14.4r_base4.4:
+        CONFIG: osx_arm64_hdf51.14.4r_base4.4
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables: {}
 
