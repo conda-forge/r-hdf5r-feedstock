@@ -12,10 +12,6 @@ source:
   sha256: 4cdfb76ae0f65dfcfbcf9b013959f942dad69c89bd481cc3b425c8b084e153b3
   patches:
     - patches/0001-minimal-libs-ucrt.patch
-    {% if hdf5 == "2" %}
-    # source: https://github.com/hhoeflin/hdf5r/commit/310f7206ce149c1a186ed59e473ce5a8d50637af
-    - patches/0002-hdf5-2-compatibility.patch
-    {% endif %}
 
 build:
   number: 0
