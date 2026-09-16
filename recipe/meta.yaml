@@ -15,8 +15,6 @@ source:
     {% if hdf5 == "2" %}
     # source: https://github.com/hhoeflin/hdf5r/commit/310f7206ce149c1a186ed59e473ce5a8d50637af
     - patches/0002-hdf5-2-compatibility.patch
-    # source: https://github.com/mfansler/hdf5r/commit/bcf10508e336f529be7e036b0dc31dc6273dc034
-    - patches/0003-hdf5-v2-compat-tests.patch
     {% endif %}
 
 build:
